@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./src/output.css" rel="stylesheet" />
+    <link href="./src/custom.css" rel="stylesheet" />
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <a href="#" class="nav-logo">Gym Kuy</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="hitung_kalori.html" class="nav-link">Hitung Kalori</a>
+          </li>
+          <li class="nav-item">
+            <a href="hitung_bmi.html" class="nav-link">Kalkulator BMI</a>
+          </li>
+          <li class="nav-item">
+            <a href="hitung_protein.html" class="nav-link">Hitung Protein</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container flex items-center w-2/3 max-sm:w-full justify-center">
+      <img
+        src="../assets/img/banner.jpg"
+        class="w-full pt-8 rounded-xl"
+        alt=""
+      />
+    </div>
+    <div class="container w-2/3 max-sm:w-full flex items-center justify-start py-5 gap-3">
+      <img
+        src="../assets/img/banner.jpg"
+        class="w-20 h-20 rounded-full"
+        alt=""
+      />
+      <div>
+        <div class="text-3xl font-bold">Customer Service</div>
+        <div class="italic">Ada Yang perlu saya bantu?</div>
+      </div>
+    </div>
+
+    <div class="container py-5 w-2/3 max-sm:w-full flex items-start gap-7 justify-center">
+      <form id="proteinForm" class="w-96">
+        <div class="mb-4">
+          <label for="jenisKelamin" class="block font-medium text-gray-700"
+            >Jenis Kelamin:</label
+          >
+          <select
+            id="jenisKelamin"
+            name="jenisKelamin"
+            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+          >
+            <option value="laki-laki">Laki-laki</option>
+            <option value="perempuan">Perempuan</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label for="beratBadan" class="block font-medium text-gray-700"
+            >Berat Badan (kg):</label
+          >
+          <input
+            type="number"
+            id="beratBadan"
+            name="beratBadan"
+            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-blue-200"
+        >
+          Hitung Kebutuhan Protein
+        </button>
+      </form>
+
+      <div class="w-96">
+        <div>
+          <h1>
+            Untuk kalian program bulking di lebih baik lagi menambahkan 500
+            kalori untuk memperoleh hasil yang maksimal
+          </h1>
+          <div id="hasilProtein" class="mt-4 text-blue-700"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container max-sm:w-full w-2/3">
+      <div
+        id="accordion-color"
+        data-accordion="collapse"
+        data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white"
+      >
+        <h2 id="accordion-color-heading-1">
+          <button
+            type="button"
+            class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3"
+            data-accordion-target="#accordion-color-body-1"
+            aria-expanded="true"
+            aria-controls="accordion-color-body-1"
+          >
+            <span>Apa itu Protein?</span>
+            <svg
+              data-accordion-icon
+              class="w-3 h-3 rotate-180 shrink-0"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5 5 1 1 5"
+              />
+            </svg>
+          </button>
+        </h2>
+        <div
+          id="accordion-color-body-1"
+          class="hidden"
+          aria-labelledby="accordion-color-heading-1"
+        >
+          <div
+            class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
+          >
+            <p class="mb-2 text-gray-500 dark:text-gray-400">
+              Protein adalah salah satu jenis nutrisi yang penting untuk kesehatan tubuh manusia. Mereka terdiri dari rantai panjang asam amino yang digunakan oleh tubuh untuk berbagai fungsi biologis. Protein ditemukan dalam banyak makanan, termasuk daging, ikan, telur, produk susu, kacang-kacangan, biji-bijian, dan produk kedelai.
+
+Fungsi protein dalam tubuh sangat beragam. Mereka adalah blok bangunan utama jaringan tubuh, termasuk otot, tulang, kulit, dan rambut. Protein juga berperan dalam pembentukan enzim, hormon, dan neurotransmiter yang diperlukan untuk proses metabolisme tubuh yang tepat. Selain itu, protein juga berfungsi sebagai bagian penting dari sistem kekebalan tubuh, membantu memerangi infeksi dan penyakit.
+
+Asam amino adalah "blok bangunan" protein, dan tubuh manusia membutuhkan sejumlah asam amino esensial yang harus diperoleh dari makanan karena tubuh tidak dapat membuatnya sendiri. Ini termasuk asam amino seperti leusin, lisin, valin, dan lainnya.
+
+Kekurangan protein dalam diet dapat mengakibatkan berbagai masalah kesehatan, termasuk kehilangan massa otot, penurunan daya tahan terhadap infeksi, dan masalah pertumbuhan pada anak-anak. Oleh karena itu, penting untuk memasukkan cukup protein dalam diet sehari-hari untuk mendukung kesehatan tubuh secara keseluruhan.
+            </p>
+          
+          </div>
+        </div>
+       
+      </div>
+    </div>
+
+   
+
+    <div class="container w-2/3 max-sm:w-full">
+      <footer class="bg-white rounded-lg shadow dark:bg-gray-900 my-4">
+        <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+          <div class="sm:flex sm:items-center sm:justify-between">
+            <a
+              href="#"
+              class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+            >
+              
+              <span
+                class="self-center text-2xl font-semibold whitespace-nowrap text-blue-500"
+                >Gym Kuy</span
+              >
+            </a>
+            <ul
+              class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400"
+            >
+              <li>
+                <a href="#" class="hover:underline me-4 md:me-6">About</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline me-4 md:me-6"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <hr
+            class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+          />
+          <span
+            class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
+            >© 2024
+            <a href="https://anandamw.site/" class="hover:underline text-blue-500 italic underline">GymKuy</a
+            >. All Rights Reserved.</span
+          >
+        </div>
+      </footer>
+    </div>
+
+    <script src="src/main.js"></script>
+
+    <script>
+      document
+        .getElementById("proteinForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var jenisKelamin = document.getElementById("jenisKelamin").value;
+          var beratBadan = parseFloat(
+            document.getElementById("beratBadan").value
+          );
+
+          var proteinHarian;
+
+          if (jenisKelamin === "laki-laki") {
+            proteinHarian = hitungProteinLakiLaki(beratBadan);
+          } else if (jenisKelamin === "perempuan") {
+            proteinHarian = hitungProteinPerempuan(beratBadan);
+          } else {
+            console.log("Jenis kelamin tidak valid!");
+            return;
+          }
+
+          var hasilProtein =
+            "Kebutuhan protein harian Anda adalah: " +
+            proteinHarian.toFixed(2) +
+            " gram";
+          document.getElementById("hasilProtein").innerText = hasilProtein;
+        });
+
+      // Fungsi untuk menghitung kebutuhan protein harian untuk laki-laki
+      function hitungProteinLakiLaki(beratBadan) {
+        // Kebutuhan protein untuk laki-laki dalam gram per kilogram berat badan
+        var proteinPerKg = 0.8;
+        var proteinHarian = proteinPerKg * beratBadan;
+        return proteinHarian;
+      }
+
+      // Fungsi untuk menghitung kebutuhan protein harian untuk perempuan
+      function hitungProteinPerempuan(beratBadan) {
+        // Kebutuhan protein untuk perempuan dalam gram per kilogram berat badan
+        var proteinPerKg = 0.75;
+        var proteinHarian = proteinPerKg * beratBadan;
+        return proteinHarian;
+      }
+    </script>
+  </body>
+</html>

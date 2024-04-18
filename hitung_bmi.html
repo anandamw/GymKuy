@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./src/output.css" rel="stylesheet" />
+    <link href="./src/custom.css" rel="stylesheet" />
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <a href="#" class="nav-logo">Gym Kuy</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="hitung_kalori.html" class="nav-link">Hitung Kalori</a>
+          </li>
+          <li class="nav-item">
+            <a href="hitung_bmi.html" class="nav-link">Kalkulator BMI</a>
+          </li>
+          <li class="nav-item">
+            <a href="hitung_protein.html" class="nav-link">Hitung Protein</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container flex items-center w-2/3 max-sm:w-full justify-center">
+      <img
+        src="../assets/img/banner.jpg"
+        class="w-full pt-8 rounded-xl"
+        alt=""
+      />
+    </div>
+    <div class="container w-2/3 max-sm:w-full flex items-center justify-start py-5 gap-3">
+      <img
+        src="../assets/img/banner.jpg"
+        class="w-20 h-20 rounded-full"
+        alt=""
+      />
+      <div>
+        <div class="text-3xl font-bold">Customer Service</div>
+        <div class="italic">Ada Yang perlu saya bantu?</div>
+      </div>
+    </div>
+
+    <div class="container py-5 w-2/3 max-sm:w-full flex items-start gap-7 justify-center">
+      <form id="bmiForm" class="w-96">
+        <div class="mb-4">
+          <label for="jenisKelamin" class="block font-medium text-gray-700"
+            >Jenis Kelamin:</label
+          >
+          <select
+            id="jenisKelamin"
+            name="jenisKelamin"
+            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+          >
+            <option value="laki-laki">Laki-laki</option>
+            <option value="perempuan">Perempuan</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label for="beratBadan" class="block font-medium text-gray-700"
+            >Berat Badan (kg):</label
+          >
+          <input
+            type="number"
+            id="beratBadan"
+            name="beratBadan"
+            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="tinggiBadan" class="block font-medium text-gray-700"
+            >Tinggi Badan (cm):</label
+          >
+          <input
+            type="number"
+            id="tinggiBadan"
+            name="tinggiBadan"
+            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-blue-200"
+        >
+          Hitung BMI
+        </button>
+      </form>
+      <div class="w-96">
+        <div>
+          <h1>
+            Untuk kalian program bulking di lebih baik lagi menambahkan 500
+            kalori untuk memperoleh hasil yang maksimal
+          </h1>
+          <div id="hasilBMI" class="mt-4 text-blue-700"></div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container w-2/3 max-sm:w-full">
+      <div
+        id="accordion-color"
+        data-accordion="collapse"
+        data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white"
+      >
+        <h2 id="accordion-color-heading-1">
+          <button
+            type="button"
+            class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3"
+            data-accordion-target="#accordion-color-body-1"
+            aria-expanded="true"
+            aria-controls="accordion-color-body-1"
+          >
+            <span>Apa itu BMI?</span>
+            <svg
+              data-accordion-icon
+              class="w-3 h-3 rotate-180 shrink-0"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5 5 1 1 5"
+              />
+            </svg>
+          </button>
+        </h2>
+        <div
+          id="accordion-color-body-1"
+          class="hidden"
+          aria-labelledby="accordion-color-heading-1"
+        >
+          <div
+            class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
+          >
+            <p class="mb-2 text-gray-500 dark:text-gray-400">
+              BMI (Body Mass Index) adalah ukuran yang mengevaluasi proporsi relatif antara berat badan dan tinggi badan seseorang. Ini dihitung dengan membagi berat badan seseorang (dalam kilogram) dengan kuadrat tinggi badan mereka (dalam meter). Hasilnya digunakan untuk mengklasifikasikan berat badan seseorang ke dalam kategori seperti berat badan kurang, normal, kelebihan berat badan, atau obesitas. Namun, perlu diingat bahwa BMI adalah alat sederhana dan tidak mempertimbangkan komposisi tubuh secara keseluruhan.
+            </p>
+            
+          </div>
+        </div>
+      
+      </div>
+    </div>
+
+  
+
+    <div class="container w-2/3 max-sm:w-full">
+      <footer class="bg-white rounded-lg shadow dark:bg-gray-900 my-4">
+        <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+          <div class="sm:flex sm:items-center sm:justify-between">
+            <a
+              href="#"
+              class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+            >
+              
+              <span
+                class="self-center text-2xl font-semibold whitespace-nowrap text-blue-500"
+                >Gym Kuy</span
+              >
+            </a>
+            <ul
+              class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400"
+            >
+              <li>
+                <a href="#" class="hover:underline me-4 md:me-6">About</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline me-4 md:me-6"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <hr
+            class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+          />
+          <span
+            class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
+            >© 2024
+            <a href="https://anandamw.site/" class="hover:underline text-blue-500 italic underline">GymKuy</a
+            >. All Rights Reserved.</span
+          >
+        </div>
+      </footer>
+    </div>
+
+
+    <script src="src/main.js"></script>
+    <script >
+      
+
+
+document.getElementById("bmiForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var jenisKelamin = document.getElementById("jenisKelamin").value;
+    var beratBadan = parseFloat(document.getElementById("beratBadan").value);
+    var tinggiBadan = parseFloat(document.getElementById("tinggiBadan").value) / 100;
+
+    var bmi, statusBMI;
+
+    if (jenisKelamin === "laki-laki") {
+        bmi = hitungBMILakiLaki(beratBadan, tinggiBadan);
+    } else if (jenisKelamin === "perempuan") {
+        bmi = hitungBMIPerempuan(beratBadan, tinggiBadan);
+    } else {
+        console.log("Jenis kelamin tidak valid!");
+        return;
+    }
+
+    statusBMI = getStatusBMI(bmi);
+
+    var hasilBMI = "BMI Anda adalah: " + bmi.toFixed(2) + ". Status BMI: " + statusBMI;
+    document.getElementById("hasilBMI").innerText = hasilBMI;
+});
+
+// Fungsi untuk menghitung BMI untuk laki-laki
+function hitungBMILakiLaki(beratBadan, tinggiBadan) {
+    var bmi = beratBadan / (tinggiBadan * tinggiBadan);
+    return bmi;
+}
+
+// Fungsi untuk menghitung BMI untuk perempuan
+function hitungBMIPerempuan(beratBadan, tinggiBadan) {
+    var bmi = beratBadan / (tinggiBadan * tinggiBadan);
+    return bmi;
+}
+
+// Fungsi untuk menentukan status BMI
+function getStatusBMI(bmi) {
+    if (bmi < 18.5) {
+        return "Kurus";
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+        return "Normal";
+    } else if (bmi >= 25 && bmi < 29.9) {
+        return "Gemuk";
+    } else {
+        return "Obesitas";
+    }
+}
+
+    </script>
+  </body>
+</html>
